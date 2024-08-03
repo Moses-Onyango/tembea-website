@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation form - TEMBEA WEBSITE</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Donate</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://js.stripe.com/v3/"></script>
+        <style>
+            .hidden { display: none; }
+            .error { color: red; }
+            .success { color: green; }
+        </style>
+    </head>
+    <body>
+    
+    <div class="donate-Q">
+        <a href="./index.html" class="donate-q">Go Back</a>
+    </div>
+    
+    <section class="sc-3" id="help">
+        <div class="head-5">
+            <h1>HELP</h1>
+        </div>
+    
+        <section class="donate reveal" id="donate-form">
+            <h2>Donate</h2>
+            <form id="payment-form" method="post" action="process_payment.php">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="amount">Donation Amount (USD)</label>
+                <input type="number" id="amount" name="amount" min="1" required>
+                
+                <label for="payment-method">Choose Payment Method</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="" disabled selected>Select a payment method</option>
+                    <option value="stripe">Credit Card (Stripe)</option>
+                    <option value="mpesa">M-Pesa</option>
+                </select>
+                
+                <div id="stripe-section" class="payment-section hidden">
+                    <label for="card-element">Credit Card</label>
+                    <div id="card-element"></div>
+                    <div id="card-errors" class="error"></div>
+                </div>
+                
+                <div id="mpesa-section" class="payment-section hidden">
+                    <label for="phone">M-Pesa Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your M-Pesa phone number" required>
+                </div>
+                
+                <button type="submit">Donate Now</button>
+                <div id="response-message"></div>
+            </form>
+        </section>
+    </section>
+    
+    <script>
+        // Stripe integration
+        var stripe = Stripe('your-publishable-key-here');
+        var elements = stripe.elements();
+        var card = elements.create('card');
+        card.mount('#card-element');
+    
+        var form = document.getElementById('payment-form');
+        var paymentMethodSelect = document.getElementById('payment-method');
+        var stripeSection = document.getElementById('stripe-section');
+        var mpesaSection = document.getElementById('mpesa-section');
+        var responseMessage = document.getElementById('response-message');
+        var cardErrors = document.getElementById('card-errors');
+    
+        paymentMethodSelect.addEventListener('change', function() {
+            if (paymentMethodSelect.value === 'stripe') {
+                stripeSection.classList.remove('hidden');
+                mpesaSection.classList.add('hidden');
+            } else if (paymentMethodSelect.value === 'mpesa') {
+                stripeSection.classList.add('hidden');
+                mpesaSection.classList.remove('hidden');
+            } else {
+                stripeSection.classList.add('hidden');
+                mpesaSection.classList.add('hidden');
+            }
+        });
+    
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            responseMessage.textContent = '';
+    
+            var paymentMethod = paymentMethodSelect.value;
+    
+            if (paymentMethod === 'stripe') {
+                stripe.createToken(card).then(function(result) {
+                    if (result.error) {
+                        cardErrors.textContent = result.error.message;
+                    } else {
+                        // Send the token to your server
+                        var token = result.token.id;
+                        var formData = new FormData(form);
+                        formData.append('stripeToken', token);
+    
+                        fetch('/path-to-your-server-endpoint', {
+                            method: 'POST',
+                            body: formData
+                        }).then(function(response) {
+                            return response.json();
+                        }).then(function(responseJson) {
+                            if (responseJson.success) {
+                                responseMessage.textContent = 'Donation successful!';
+                                responseMessage.className = 'success';
+                            } else {
+                                responseMessage.textContent = 'Donation failed: ' + responseJson.message;
+                                responseMessage.className = 'error';
+                            }
+                        }).catch(function(error) {
+                            responseMessage.textContent = 'There was an error processing your request.';
+                            responseMessage.className = 'error';
+                        });
+                    }
+                });
+            } else if (paymentMethod === 'mpesa') {
+                // Handle M-Pesa payment
+                var formData = new FormData(form);
+                fetch('/path-to-your-mpesa-endpoint', {
+                    method: 'POST',
+                    body: formData
+                }).then(function(response) {
+                    return response.json();
+                }).then(function(responseJson) {
+                    if (responseJson.success) {
+                        responseMessage.textContent = 'Donation successful!';
+                        responseMessage.className = 'success';
+                    } else {
+                        responseMessage.textContent = 'Donation failed: ' + responseJson.message;
+                        responseMessage.className = 'error';
+                    }
+                }).catch(function(error) {
+                    responseMessage.textContent = 'There was an error processing your request.';
+                    responseMessage.className = 'error';
+                });
+            }
+        });
+    </script>
+    
+    </body>
+    </html>
+    
+    
+
+<script src="./APPS/main.js"></script>
+<script>
+    function showMenu() {
+        document.getElementById('nav-link').style.display = 'block';
+        document.querySelector('.fa-bars').style.display = 'none';
+        document.querySelector('.fa-times').style.display = 'block';
+    }
+    function hideMenu() {
+        document.getElementById('nav-link').style.display = 'none';
+        document.querySelector('.fa-bars').style.display = 'block';
+        document.querySelector('.fa-times').style.display = 'none';
+    }
+</script>
+</body>
+</html>
+

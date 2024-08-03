@@ -1,0 +1,2923 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    z-index: -1;
+}
+
+ul {
+    list-style: none;
+    z-index: 10px;
+}
+
+/* Header Styles */
+.header {
+    background: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+}
+    /* Container styling */
+    .container-bar1 {
+        background-color: #333;
+        
+    }
+
+    /* Navbar styling */
+    .nav-bar1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    /* List styling */
+    .nav-bar1 ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .nav-bar1 li {
+        position: relative;
+    }
+
+    .nav-bar1 li a {
+        display: block;
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .nav-bar1 li a:hover {
+        background-color: #575757;
+    }
+
+    /* Dropdown styling */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #908282;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        min-width: 160px;
+    }
+
+    .dropdown-content a {
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        transition: background-color 0.3s;
+        background-color: #6d6c6c;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Donate button styling */
+  
+
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
+        .nav-bar1 {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-bar1 ul {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .nav-bar1 li {
+            width: 100%;
+        }
+
+        .nav-bar1 li a {
+            width: 100%;
+            padding: 10px 20px;
+        }
+
+        .dropdown-content {
+            position: relative;
+            width: 100%;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            width: 100%;
+        }
+
+        .donate-b {
+            width: 100%;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .donate-b button {
+            width: 100%;
+            padding: 12px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .nav-bar1 ul {
+            align-items: flex-start;
+        }
+
+        .nav-bar1 li a {
+            padding: 8px 10px;
+        }
+
+        .donate-b button {
+            padding: 10px 0;
+        }
+    }
+    /* Existing styles... */
+
+    /* Modal styles */
+  /* Style for the Donate button */
+.donate-b {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.donate-b button {
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.donate-b button:hover {
+    background-color: #45a049; /* Darker green */
+    transform: scale(1.05);
+}
+
+/* Style for the donation form */
+.sc-3 {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+.head-5 h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.donate {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.donate h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Form element styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form select {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+form input[type="text"]::placeholder,
+form input[type="email"]::placeholder,
+form input[type="number"]::placeholder {
+    color: #aaa;
+}
+
+form select {
+    font-size: 1rem;
+}
+
+form .payment-details {
+    margin-bottom: 20px;
+}
+
+/* Credit Card Fields */
+.credit-card input[type="text"] {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Cryptocurrency Fields */
+.crypto input[type="text"] {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Button styling */
+form button.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button.btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Center content */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .donate {
+        padding: 20px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="number"],
+    form select {
+        font-size: 0.9rem;
+    }
+
+    form button.btn {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+.payment-details {
+    margin-bottom: 15px;
+}
+
+.payment-details label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.payment-details input[type="text"],
+.payment-details input[type="number"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.payment-details select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form button.btn {
+    background-color: #4f4ce4;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button.btn:hover {
+    background-color: #6650e0;
+}
+
+
+
+
+/* Background Image Styles */
+.background-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Text Section Styles */
+.background-text {
+    text-align: center;
+    padding: 20px;
+}
+
+.background-text h1, .background-text h2 {
+    color: #fff;
+}
+
+.home-text {
+    padding: 20px;
+    background: #f1f1f1;
+}
+
+.home-text h2 {
+    margin-bottom: 15px;
+}
+
+.home-text p {
+    margin-bottom: 15px;
+}
+
+/* Home Paragraph Styles */
+.home-paragraph {
+    padding: 20px;
+    background: #fff;
+}
+
+.home-paragraph img {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.home-partner {
+    padding: 20px;
+    background: #f1f1f1;
+}
+
+.home-partner h2 {
+    margin-bottom: 15px;
+}
+
+.home-partner ul {
+    padding: 0;
+}
+
+.home-partner ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer Styles */
+.footer7 {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer7 .footer-logo img {
+    width: 150px;
+}
+
+.footer7 .footer-social {
+    margin: 20px 0;
+}
+
+.footer7 .footer-social .F-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer7 .footer-social .F-icons li {
+    margin: 0 10px;
+}
+
+.footer7 .footer-social .F-icons li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer7 .f-links, .footer7 .f-contact {
+    margin: 20px 0;
+}
+
+.footer7 .f-links a, .footer7 .f-contact p {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer7 .f-links a:hover {
+    color: #007bff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact-form .submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contact-form .submit:hover {
+    background-color: #0056b3;
+}
+
+.f-donate button, .f-apply button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.f-donate button:hover, .f-apply button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header .nav-link ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .header .fa-bars {
+        display: block;
+    }
+
+    .header .fa-times {
+        display: none;
+    }
+
+    .header .nav-link.show {
+        display: flex;
+    }
+}
+.image1 {
+    display: flex;        
+    justify-content: center;
+    align-items: center;    
+    height: 500px;          
+    background-color: #f0f0f0;  
+    border: 2px solid #ccc; 
+    padding: 10px;          
+    margin: 20px auto;      
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.image1 img {
+    max-width: 100%;        
+    max-height: 100%;       
+    object-fit: cover;      
+    border-radius: 10px;    
+}
+
+.contect2 {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px; /* Padding around the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 800px; /* Maximum width of the container */
+    margin: 20px auto; /* Center the container with margin on top and bottom */
+    text-align: center; /* Center align text */
+}
+
+.contect2 h1 {
+    font-size: 2em; /* Larger font size for the heading */
+    color: #333; /* Dark color for the heading */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+.contect2 p {
+    font-size: 1.1em; /* Slightly larger font size for readability */
+    line-height: 1.6; /* Increase line height for better readability */
+    color: #555; /* Slightly lighter color for the text */
+    margin: 0; /* Remove default margin */
+}
+.content3 {
+    background-color: #fff; /* White background for the section */
+    padding: 20px; /* Padding around the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 1000px; /* Maximum width of the container */
+    margin: 20px auto; /* Center the container with margin on top and bottom */
+    text-align: center; /* Center align text and images */
+}
+
+.content3 h1 {
+    font-size: 2.5em; /* Larger font size for the heading */
+    color: #333; /* Dark color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.content3 img {
+    width: 100%; /* Make images responsive */
+    max-width: 300px; /* Maximum width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
+    margin: 10px; /* Space between images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+}
+
+/* Responsive Layout for Images */
+@media (min-width: 600px) {
+    .content3 img {
+        width: 45%; /* 2 images per row on medium screens */
+    }
+}
+
+@media (min-width: 900px) {
+    .content3 img {
+        width: 30%; /* 3 images per row on large screens */
+    }
+}
+.content4 {
+    background-color: #f5f5f5; /* Light grey background for the section */
+    padding: 30px; /* Padding around the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 20px auto; /* Center the container with margin on top and bottom */
+    text-align: center; /* Center align text and images */
+}
+
+.content4 h1 {
+    font-size: 2.5em; /* Larger font size for the heading */
+    color: #333; /* Dark color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.content4 img {
+    width: 100px; /* Set a consistent width for the logos */
+    height: auto; /* Maintain aspect ratio */
+    margin: 15px; /* Space between logos */
+    display: inline-block; /* Display images in line */
+    vertical-align: middle; /* Align images vertically in the middle */
+}
+
+/* Responsive Layout for Logos */
+@media (min-width: 600px) {
+    .content4 img {
+        width: 150px; /* Increase size for medium screens */
+    }
+}
+
+@media (min-width: 900px) {
+    .content4 img {
+        width: 200px; /* Increase size for large screens */
+    }
+}
+.content-header {
+    background-color: #ffffff; /* White background for the section */
+    padding: 20px; /* Padding around the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 20px auto; /* Center the container with margin on top and bottom */
+    text-align: center; /* Center align text and image */
+}
+
+.content-header h1 {
+    font-size: 2.5em; /* Larger font size for the heading */
+    color: #333; /* Dark color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.content-header img {
+    width: 100%; /* Make image responsive */
+    max-width: 1000px; /* Maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+}
+.content-body {
+    background-color: #f9f9f9; /* Light background for the section */
+    padding: 30px; /* Padding around the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 20px auto; /* Center the container with margin on top and bottom */
+}
+
+.content-body h2 {
+    font-size: 2em; /* Font size for headings */
+    color: #333; /* Dark color for the headings */
+    margin-top: 20px; /* Space above the headings */
+    margin-bottom: 10px; /* Space below the headings */
+}
+
+.content-body p {
+    font-size: 1.1em; /* Slightly larger font size for readability */
+    line-height: 1.6; /* Increase line height for better readability */
+    color: #555; /* Slightly lighter color for the text */
+    margin: 0 0 20px; /* Margin below the paragraphs */
+}
+
+.content-body img {
+    width: 100%; /* Make images responsive */
+    max-width: 600px; /* Maximum width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for the images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+    margin: 20px 0; /* Space above and below images */
+}
+
+/* Responsive Layout for Images */
+@media (min-width: 600px) {
+    .content-body img {
+        max-width: 800px; /* Increase size for medium screens */
+    }
+}
+
+@media (min-width: 900px) {
+    .content-body img {
+        max-width: 1000px; /* Increase size for large screens */
+    }
+}
+@media (max-width: 768px) {
+    .nav-bar1 {
+        display: none; /* or some other style change */
+    }
+}
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+.header {
+    background: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-bar1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link ul {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.nav-link ul li {
+    position: relative;
+}
+
+.nav-link ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-link ul li a:hover {
+    color: #007bff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.donate-b, .apply-b {
+    margin-left: 10px;
+}
+
+.donate-b button, .apply-b button {
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.donate-b button:hover, .apply-b button:hover {
+    background-color: #0056b3;
+}
+
+/* Background Image Styles */
+.background-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Text Section Styles */
+.background-text {
+    text-align: center;
+    padding: 20px;
+}
+
+.background-text h1, .background-text h2 {
+    color: #fff;
+}
+
+.home-text {
+    padding: 20px;
+    background: #f1f1f1;
+}
+
+.home-text h2 {
+    margin-bottom: 15px;
+}
+
+.home-text p {
+    margin-bottom: 15px;
+}
+
+/* Home Paragraph Styles */
+.home-paragraph {
+    padding: 20px;
+    background: #fff;
+}
+
+.home-paragraph img {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.home-partner {
+    padding: 20px;
+    background: #f1f1f1;
+}
+
+.home-partner h2 {
+    margin-bottom: 15px;
+}
+
+.home-partner ul {
+    padding: 0;
+}
+
+.home-partner ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer Styles */
+.footer7 {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer7 .footer-logo img {
+    width: 150px;
+}
+
+.footer7 .footer-social {
+    margin: 20px 0;
+}
+
+.footer7 .footer-social .F-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer7 .footer-social .F-icons li {
+    margin: 0 10px;
+}
+
+.footer7 .footer-social .F-icons li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer7 .f-links, .footer7 .f-contact {
+    margin: 20px 0;
+}
+
+.footer7 .f-links a, .footer7 .f-contact p {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer7 .f-links a:hover {
+    color: #007bff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact-form .submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contact-form .submit:hover {
+    background-color: #0056b3;
+}
+
+.f-donate button, .f-apply button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.f-donate button:hover, .f-apply button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header .nav-link ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .header .fa-bars {
+        display: block;
+    }
+
+    .header .fa-times {
+        display: none;
+    }
+
+    .header .nav-link.show {
+        display: flex;
+    }
+}
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+.header {
+    background: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-bar1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link ul {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.nav-link ul li {
+    position: relative;
+}
+
+.nav-link ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-link ul li a:hover {
+    color: #007bff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.donate-b, .apply-b {
+    margin-left: 10px;
+}
+
+.donate-b button, .apply-b button {
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.donate-b button:hover, .apply-b button:hover {
+    background-color: #0056b3;
+}
+
+/* Page Content Styles */
+.page-content {
+    padding: 20px;
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.content-header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.content-body {
+    padding: 20px;
+}
+
+.content-body h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.content-body p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Footer Styles */
+.footer7 {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer7 .footer-logo img {
+    width: 150px;
+}
+
+.footer7 .footer-social {
+    margin: 20px 0;
+}
+
+.footer7 .footer-social .F-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer7 .footer-social .F-icons li {
+    margin: 0 10px;
+}
+
+.footer7 .footer-social .F-icons li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer7 .f-links, .footer7 .f-contact {
+    margin: 20px 0;
+}
+
+.footer7 .f-links a, .footer7 .f-contact p {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer7 .f-links a:hover {
+    color: #007bff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact-form .submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contact-form .submit:hover {
+    background-color: #0056b3;
+}
+
+.f-donate button, .f-apply button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.f-donate button:hover, .f-apply button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header .nav-link ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .header .fa-bars {
+        display: block;
+    }
+
+    .header .fa-times {
+        display: none;
+    }
+
+    .header .nav-link.show {
+        display: flex;
+    }
+}
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+.header {
+    background: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-bar1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link ul {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.nav-link ul li {
+    position: relative;
+}
+
+.nav-link ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-link ul li a:hover {
+    color: #007bff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.donate-b, .apply-b {
+    margin-left: 10px;
+}
+
+.donate-b button, .apply-b button {
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.donate-b button:hover, .apply-b button:hover {
+    background-color: #0056b3;
+}
+
+/* Page Content Styles */
+.page-content {
+    padding: 20px;
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.content-header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.content-body {
+    padding: 20px;
+}
+
+.content-body h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.content-body p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.operation-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.operation-item h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.operation-item p {
+    margin-bottom: 10px;
+}
+
+.operation-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Footer Styles */
+.footer7 {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer7 .footer-logo img {
+    width: 150px;
+}
+
+.footer7 .footer-social {
+    margin: 20px 0;
+}
+
+.footer7 .footer-social .F-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer7 .footer-social .F-icons li {
+    margin: 0 10px;
+}
+
+.footer7 .footer-social .F-icons li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer7 .f-links, .footer7 .f-contact {
+    margin: 20px 0;
+}
+
+.footer7 .f-links a, .footer7 .f-contact p {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer7 .f-links a:hover {
+    color: #007bff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact-form .submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contact-form .submit:hover {
+    background-color: #0056b3;
+}
+
+.f-donate button, .f-apply button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.f-donate button:hover, .f-apply button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header .nav-link ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .header .fa-bars {
+        display: block;
+    }
+
+    .header .fa-times {
+        display: none;
+    }
+
+    .header .nav-link.show {
+        display: flex;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+.header {
+    background: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-bar1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link ul {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.nav-link ul li {
+    position: relative;
+}
+
+.nav-link ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-link ul li a:hover {
+    color: #007bff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.donate-b, .apply-b {
+    margin-left: 10px;
+}
+
+.donate-b button, .apply-b button {
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.donate-b button:hover, .apply-b button:hover {
+    background-color: #0056b3;
+}
+
+/* Page Content Styles */
+.page-content {
+    padding: 20px;
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.content-header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.content-body {
+    padding: 20px;
+}
+
+.content-body h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.content-body p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.history-item {
+    margin-bottom: 20px;
+}
+
+.history-item h3 {
+    margin-top: 10px;
+    font-size: 1.3em;
+}
+
+.history-item p {
+    margin-bottom: 10px;
+}
+
+.history-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Footer Styles */
+.footer7 {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer7 .footer-logo img {
+    width: 150px;
+}
+
+.footer7 .footer-social {
+    margin: 20px 0;
+}
+
+.footer7 .footer-social .F-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer7 .footer-social .F-icons li {
+    margin: 0 10px;
+}
+
+.footer7 .footer-social .F-icons li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer7 .f-links, .footer7 .f-contact {
+    margin: 20px 0;
+}
+
+.footer7 .f-links a, .footer7 .f-contact p {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer7 .f-links a:hover {
+    color: #007bff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact-form .submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contact-form .submit:hover {
+    background-color: #0056b3;
+}
+
+.f-donate button, .f-apply button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.f-donate button:hover, .f-apply button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header .nav-link ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .header .fa-bars {
+        display: block;
+    }
+
+    .header .fa-times {
+        display: none;
+    }
+
+    .header .nav-link.show {
+        display: flex;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+.header {
+    background: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-bar1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link ul {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.nav-link ul li {
+    position: relative;
+}
+
+.nav-link ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-link ul li a:hover {
+    color: #007bff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.donate-b, .apply-b {
+    margin-left: 10px;
+}
+
+.donate-b button, .apply-b button {
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.donate-b button:hover, .apply-b button:hover {
+    background-color: #0056b3;
+}
+
+/* Page Content Styles */
+.page-content {
+    padding: 20px;
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.content-header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.content-body {
+    padding: 20px;
+}
+
+.content-body h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.content-body p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.initiative-item {
+    margin-bottom: 20px;
+}
+
+.initiative-item h3 {
+    margin-top: 10px;
+    font-size: 1.3em;
+}
+
+.initiative-item p {
+    margin-bottom: 10px;
+}
+
+.initiative-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Footer Styles */
+.footer7 {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer7 .footer-logo img {
+    width: 150px;
+}
+
+.footer7 .footer-social {
+    margin: 20px 0;
+}
+
+.footer7 .footer-social .F-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer7 .footer-social .F-icons li {
+    margin: 0 10px;
+}
+
+.footer7 .footer-social .F-icons li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer7 .f-links, .footer7 .f-contact {
+    margin: 20px 0;
+}
+
+.footer7 .f-links a, .footer7 .f-contact p {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer7 .f-links a:hover {
+    color: #007bff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact-form .submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contact-form .submit:hover {
+    background-color: #0056b3;
+}
+
+.f-donate button, .f-apply button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.f-donate button:hover, .f-apply button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header .nav-link ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .header .fa-bars {
+        display: block;
+    }
+
+    .header .fa-times {
+        display: none;
+    }
+
+    .header .nav-link.show {
+        display: flex;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+.header {
+    background: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-bar1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link ul {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.nav-link ul li {
+    position: relative;
+}
+
+.nav-link ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-link ul li a:hover {
+    color: #007bff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.donate-b, .apply-b {
+    margin-left: 10px;
+}
+
+.donate-b button, .apply-b button {
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.donate-b button:hover, .apply-b button:hover {
+    background-color: #0056b3;
+}
+
+/* Page Content Styles */
+.page-content {
+    padding: 20px;
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.content-header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.content-body {
+    padding: 20px;
+}
+
+.content-body h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.content-body p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.initiative-item {
+    margin-bottom: 20px;
+}
+
+.initiative-item h3 {
+    margin-top: 10px;
+    font-size: 1.3em;
+}
+
+.initiative-item p {
+    margin-bottom: 10px;
+}
+
+.initiative-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Footer Styles */
+.footer7 {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer7 .footer-logo img {
+    width: 150px;
+}
+
+.footer7 .footer-social {
+    margin: 20px 0;
+}
+
+.footer7 .footer-social .F-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer7 .footer-social .F-icons li {
+    margin: 0 10px;
+}
+
+.footer7 .footer-social .F-icons li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer7 .f-links, .footer7 .f-contact {
+    margin: 20px 0;
+}
+
+.footer7 .f-links a, .footer7 .f-contact p {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer7 .f-links a:hover {
+    color: #007bff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact-form .submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contact-form .submit:hover {
+    background-color: #0056b3;
+}
+
+.f-donate button, .f-apply button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.f-donate button:hover, .f-apply button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header .nav-link ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .header .fa-bars {
+        display: block;
+    }
+
+    .header .fa-times {
+        display: none;
+    }
+
+    .header .nav-link.show {
+        display: flex;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+.header {
+    background: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-bar1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link ul {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.nav-link ul li {
+    position: relative;
+}
+
+.nav-link ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-link ul li a:hover {
+    color: #007bff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.donate-b, .apply-b {
+    margin-left: 10px;
+}
+
+.donate-b button, .apply-b button {
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.donate-b button:hover, .apply-b button:hover {
+    background-color: #0056b3;
+}
+
+/* Page Content Styles */
+.page-content {
+    padding: 20px;
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.content-header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.content-body {
+    padding: 20px;
+}
+
+.content-body h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.content-body p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.partner-item {
+    margin-bottom: 20px;
+}
+
+.partner-item h3 {
+    margin-top: 10px;
+    font-size: 1.3em;
+}
+
+.partner-item p {
+    margin-bottom: 10px;
+}
+
+.partner-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Footer Styles */
+.footer7 {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer7 .footer-logo img {
+    width: 150px;
+}
+
+.footer7 .footer-social {
+    margin: 20px 0;
+}
+
+.footer7 .footer-social .F-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer7 .footer-social .F-icons li {
+    margin: 0 10px;
+}
+
+.footer7 .footer-social .F-icons li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer7 .f-links, .footer7 .f-contact {
+    margin: 20px 0;
+}
+
+.footer7 .f-links a, .footer7 .f-contact p {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer7 .f-links a:hover {
+    color: #007bff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact-form .submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contact-form .submit:hover {
+    background-color: #0056b3;
+}
+
+.f-donate button, .f-apply button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.f-donate button:hover, .f-apply button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header .nav-link ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .header .fa-bars {
+        display: block;
+    }
+
+    .header .fa-times {
+        display: none;
+    }
+
+    .header .nav-link.show {
+        display: flex;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+.header {
+    background: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-bar1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link ul {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.nav-link ul li {
+    position: relative;
+}
+
+.nav-link ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-link ul li a:hover {
+    color: #007bff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.donate-b, .apply-b {
+    margin-left: 10px;
+}
+
+.donate-b button, .apply-b button {
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.donate-b button:hover, .apply-b button:hover {
+    background-color: #0056b3;
+}
+
+/* Page Content Styles */
+.page-content {
+    padding: 20px;
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.content-header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.content-body {
+    padding: 20px;
+}
+
+.content-body h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.content-body p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.impact-item {
+    margin-bottom: 20px;
+}
+
+.impact-item h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.impact-item p {
+    margin-bottom: 15px;
+}
+
+.impact-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Footer Styles */
+.footer7 {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer7 .footer-logo img {
+    width: 150px;
+}
+
+.footer7 .footer-social {
+    margin: 20px 0;
+}
+
+.footer7 .footer-social .F-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer7 .footer-social .F-icons li {
+    margin: 0 10px;
+}
+
+.footer7 .footer-social .F-icons li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer7 .f-links, .footer7 .f-contact {
+    margin: 20px 0;
+}
+
+.footer7 .f-links a, .footer7 .f-contact p {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer7 .f-links a:hover {
+    color: #007bff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact-form .submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contact-form .submit:hover {
+    background-color: #0056b3;
+}
+
+.f-donate button, .f-apply button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.f-donate button:hover, .f-apply button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header .nav-link ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .header .fa-bars {
+        display: block;
+    }
+
+    .header .fa-times {
+        display: none;
+    }
+
+    .header .nav-link.show {
+        display: flex;
+    }
+}
+/* Style for the donation form modal */
+.donation-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.donation-modal-content {
+    background-color: #fff;
+    margin: 10% auto; /* Centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Responsive width */
+    max-width: 500px; /* Max width */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    animation: fadeIn 0.3s; /* Animation */
+}
+
+/* Animation for the modal */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Style the form inputs */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style the submit button */
+.donate-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.donate-button:hover {
+    background-color: #45a049;
+}
+
+/* Additional styling for labels */
+label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: block;
+    color: #333;
+}
+
+/* Optional: Style for a more refined look */
+.donation-modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.donation-modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+/* General button styling */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Container Styles */
+.donate-Q {
+    padding: 10px;
+    text-align: right;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.sc-3 {
+    padding: 20px;
+}
+
+.head-5 h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Form Styles */
+.donate {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.donate h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="tel"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+form input[type="number"]::-webkit-inner-spin-button,
+form input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+form button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Payment Section Styles */
+.payment-section {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Feedback Messages */
+.error {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.success {
+    color: #28a745;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .donate {
+        padding: 15px;
+    }
+
+    form button {
+        width: 100%;
+    }
+}
+.donate-b{
+    color: white;
+    text-decoration: none;
+}
+
+
